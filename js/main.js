@@ -1,3 +1,12 @@
+//Toggle Spin Class On icon
+document.querySelector(".toggle-settings .fa-gear").onclick = function () {
+  this.classList.toggle("fa-spin");
+
+  //Toggle Open Class On Main Settongs Box
+  let open = document.querySelector(".settings-box");
+  open.classList.toggle("open");
+}
+
 //Select Landing Page Element
 let landingPage = document.querySelector(".landing-page");
 
@@ -10,4 +19,3 @@ setInterval(() => {
   // Change Background Image URL
     landingPage.style.backgroundImage = 'url("imgs/' + imgsArray[randomNumber] + '")';
 }, 10000);
-console.log(Math.random() * imgsArray.length);
