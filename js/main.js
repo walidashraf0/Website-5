@@ -3,8 +3,18 @@ let mainColors = localStorage.getItem("colors_option");
 if (mainColors !== null) {
   document.documentElement.style.setProperty(
     "--main-color",
-    localStorage.getItem("colors_option")
+    mainColors
   );
+
+  // Remove Active Class From All Colors List Items
+  document.querySelectorAll(".colors-list li").forEach((element) => {
+    element.classList.remove("active");
+      // Add Active Class On Element With Data Color === Local Storage Item
+    if (element.dataset.color === mainColors) {
+      // Add Active Class
+      element.classList.add("active");
+    }
+  });
 }
 
 // Toggle Spin Class On icon
@@ -37,7 +47,24 @@ colorLi.forEach((li) => {
     });
 
     // Add Active Class On Self
-    e.target.classList.add(".active");
+    e.target.classList.add("active");
+  });
+});
+
+// Switch Random Background Option 
+const randomBackEl = document.querySelectorAll(".random-backgrounds span");
+// Loop On All Spans
+randomBackEl.forEach((span) => {
+  // Click On Every Span
+  span.addEventListener("click", (e) => {
+
+    // Remove Active Class From All Spans
+    e.target.parentElement.querySelectorAll(".active").forEach(element => {
+      element.classList.remove("active");
+    });
+
+    // Add Active Class On Self
+    e.target.classList.add("active");
   });
 });
 
@@ -54,3 +81,4 @@ setInterval(() => {
   landingPage.style.backgroundImage =
     'url("imgs/' + imgsArray[randomNumber] + '")';
 }, 10000);
+
