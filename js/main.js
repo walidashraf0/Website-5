@@ -8,23 +8,21 @@ let backgroundInterval;
 let backgroundLocalItem = localStorage.getItem("background_option");
 // Check If Random Background Local Storage Is Not Empty
 if (backgroundLocalItem !== null) {
-
-  if (backgroundLocalItem === 'true') {
+  if (backgroundLocalItem === "true") {
     backgroundOption = true;
   } else {
     backgroundOption = false;
   }
   // Rempve Active Class From All Spans
-  document.querySelectorAll(".random-backgrounds span").forEach(element => {
+  document.querySelectorAll(".random-backgrounds span").forEach((element) => {
     element.classList.remove("active");
   });
 
-  if (backgroundLocalItem === 'true') {
+  if (backgroundLocalItem === "true") {
     document.querySelector(".random-backgrounds .yes").classList.add("active");
   } else {
     document.querySelector(".random-backgrounds .no").classList.add("active");
   }
-
 }
 // Check If There's Local Storage Color Option
 let mainColors = localStorage.getItem("colors_option");
@@ -120,3 +118,27 @@ function randomizeImgs() {
     }, 1000);
   }
 }
+
+// Select Skills Selector
+let ourSkills = document.querySelector(".our-skills");
+window.onscroll = function () {
+  // Skills Offset Top
+  let skillsOffsetTop = ourSkills.offsetTop;
+  // Skills Outer Height
+  let skillsOuterHeight = ourSkills.offsetHeight;
+
+  // Window Height
+  let windowHeight = this.innerHeight;
+
+  // Window Scroll Top
+  let windowScrollTop = this.pageYOffset;
+
+  if (windowScrollTop > skillsOffsetTop + skillsOuterHeight - windowHeight) {
+    let allSkills = document.querySelectorAll(
+      ".skill-box .skill-progress span"
+    );
+    allSkills.forEach((skill) => {
+      skill.style.width = skill.dataset.progress;
+    });
+  }
+};

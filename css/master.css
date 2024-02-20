@@ -10,6 +10,14 @@ body {
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
 }
+
+.container {
+    width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+
 /* Start Settings Box */
 .settings-box {
     position: fixed;
@@ -53,17 +61,20 @@ body {
     background-color: #EEE;
     margin: 12px;
 }
+
 .settings-box .option-box h4 {
     margin: 0;
     color: #666;
     font-size: 14px;
 }
+
 .settings-box .option-box .colors-list {
     list-style: none;
     text-align: center;
     padding: 0;
     margin: 10px 0 0;
 }
+
 .settings-box .option-box li {
     width: 24px;
     height: 24px;
@@ -87,15 +98,19 @@ body {
 .settings-box .option-box li:first-child {
     background-color: #FF9800;
 }
+
 .settings-box .option-box li:nth-child(2) {
     background-color: #E91E63;
 }
+
 .settings-box .option-box li:nth-child(3) {
     background-color: #009688;
 }
+
 .settings-box .option-box li:nth-child(4) {
     background-color: #03A9F4;
 }
+
 .settings-box .option-box li:nth-child(5) {
     background-color: #4CAF50;
 }
@@ -179,7 +194,8 @@ body {
     -o-transition: 0.3s;
 }
 
-.header-area .links li a:hover, .header-area .links li a.active {
+.header-area .links li a:hover,
+.header-area .links li a.active {
     color: var(--main-color);
 }
 
@@ -214,3 +230,121 @@ body {
 }
 
 /* End Landing Page */
+/* Start About Us */
+.about-us {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+}
+
+.about-us .info-box {
+    flex: 1;
+    padding: 30px;
+}
+
+.about-us .info-box h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main-color);
+    margin: 0 0 10px;
+}
+
+.about-us .info-box p {
+    line-height: 1.8;
+    color: #767676;
+    margin: 0;
+}
+
+.about-us .image-box {
+    flex: 1;
+}
+
+.about-us .image-box img {
+    width: 250px;
+    text-align: center;
+}
+
+/* End About Us */
+/* Start Skills */
+.our-skills {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #EEE;
+}
+
+.our-skills h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main-color);
+    margin: 0 0 50px;
+    text-align: center;
+}
+
+.our-skills .skill-box {
+    background-color: #FFF;
+    display: flex;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.our-skills .skill-box .skill-name {
+    font-weight: bold;
+    width: 140px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.our-skills .skill-box .skill-progress {
+    height: 30px;
+    width: 100%;
+    background-color: #f6f6f6;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.our-skills .skill-box .skill-progress span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--main-color);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+/* End Skills */
+/* Start Gallery */
+.gallery {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* background-color: #EEE; */
+}
+.gallery h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main-color);
+    margin: 0 0 10px;
+}
+.gallery .image-box{
+    text-align: center;
+
+}
+.gallery .image-box img {
+    width: 200px;
+    height: 120px;
+    padding: 3px;
+    background-color: #f6f6f6;
+    border: 1px solid #CCC;
+    margin: 5px;
+    cursor: pointer;
+}
+/* End Gallery */
